@@ -1,0 +1,11 @@
+*.pyc
+*.swp
+*.min.js
+*.min.css
+*.compiled.css
+node_modules/
+__pycache__/
+.venv/
+.env
+app/static/js/main.js
+client_secret.json

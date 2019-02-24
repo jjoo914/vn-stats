@@ -1,0 +1,34 @@
+{
+  "name": "vn-stats",
+  "version": "1.0.0",
+  "description": "VN statistics website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --progress",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server"
+  },
+  "author": "JoostSijm <joostsijm@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.7.3",
+    "chartjs": "^0.3.24",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+  }
+}
