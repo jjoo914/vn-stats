@@ -18,8 +18,9 @@ CREDENTIALS = ServiceAccountCredentials.from_json_keyfile_name(
     ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 )
 CLIENT = gspread.authorize(CREDENTIALS)
-SHEET_ONE = CLIENT.open('VN-Stats').get_worksheet(0)
-SHEET_TWO = CLIENT.open('VN-Stats').get_worksheet(1)
+VN_STATS = CLIENT.open('VN-Stats')
+SHEET_ONE = VN_STATS.get_worksheet(1)
+PARLIAMENT = VN_STATS.worksheet('Parliament')
 
 @BLUEPRINT.route("/progress")
 def sheet_one():
@@ -28,9 +29,9 @@ def sheet_one():
 
 
 @BLUEPRINT.route("/parliament")
-def sheet_two():
+def parliament():
     """Display index page"""
     return jsonify({
-        'labels': SHEET_TWO.row_values(1),
-        'dataset': SHEET_TWO.get_all_records()
+        'labels': PARLIAMENT.row_values(1),
+        'dataset': PARLIAMENT.get_all_records()
     })
